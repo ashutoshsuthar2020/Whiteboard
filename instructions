@@ -1,0 +1,41 @@
+Divide the project in two parts client(frontend) and server 
+
+client
+- npm init vite@latest
+    - this will quickly start a project from a basic template for our react app.
+- yarn
+
+- yarn add roughjs react-router-dom
+    - 
+
+- make structure for each componenet in the project
+    - 
+
+
+
+backend
+    - npm init
+    - dependencies - express socket.io
+    - server.js
+
+
+Make create room and join room components
+
+
+White board page ui creation
+    React router dom
+    - React Router enables "client side routing".
+
+Rough.js
+    - code for canvas
+    - line rect implementation
+    - color pick
+    - undo redo
+    - clear canvas
+
+Join room 
+    - uuid implementation
+    - room create implementation
+    - room join implementation
+
+Sync board among users
