@@ -1,6 +1,6 @@
 import {Route, Routes} from "react-router-dom";
 import io from "socket.io-client";
-
+import { ToastContainer, toast } from "react-toastify";
 import './App.css';
 import RoomPage from './pages/RoomPage';
 import Forms from './components/Forms';
@@ -25,14 +25,22 @@ const App = () => {
     socket.on("userIsJoined",(data)=>{
       if(data.success){
         console.log("userJoined");
-        setUsers(data);
+        setUsers(data.users);
       }else{
-        console.log("userJoined error")
+        console.log("userJoined error");
       }
     });
     
     socket.on("allUsers",(data)=>{
       setUsers(data);
+    });
+
+    socket.on("userJoinedMessageBroadcasted",(data)=>{
+      toast.info(`${data} joined the room`);
+    });
+
+    socket.on("userLeftMessageBroadcasted", (data)=>{
+      toast.info(`${data} left the room`);
     });
   },[]);
 
@@ -57,10 +65,12 @@ const App = () => {
   };
   return (
       <div className='container'>
-        <Routes>
-          <Route path="/" element={<Forms uuid={uuid} socket={socket} setUser={setUser}/>} />
-          <Route path="/:roomId" element={<RoomPage user={user} socket={socket} users={users}/>} />
-        </Routes>
+        {/* <ToastContainer> */}
+          <Routes>
+            <Route path="/" element={<Forms uuid={uuid} socket={socket} setUser={setUser}/>} />
+            <Route path="/:roomId" element={<RoomPage user={user} socket={socket} users={users}/>} />
+          </Routes>
+        {/* </ToastContainer> */}
       </div>
   );
 };

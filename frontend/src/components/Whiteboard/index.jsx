@@ -15,7 +15,7 @@ const WhiteBoard = ({canvasRef,ctxRef, elements,setElements,tool,color,user,sock
         return (
             <div
                 className="border border-dark h-100 w-100 overflow-hidden">
-                <img src={img} alt="Real time white board image" className="w-100 h-100"/>
+                <img src={img} alt="Real time white board image" style={{height: window.innerHeight*2 , width: window.innerWidth*2}} className="w-100 h-100"/>
             </div>
         );
     }
