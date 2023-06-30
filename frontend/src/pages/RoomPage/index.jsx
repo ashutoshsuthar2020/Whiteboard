@@ -3,6 +3,7 @@ import { useRef, useState, useEffect } from "react";
 import "./index.css";
 
 import WhiteBoard from "../../components/Whiteboard";
+import Chat from "../../components/ChatBar/index";
 
 const RoomPage = ({ user, socket, users }) => {
     const canvasRef = useRef(null);
@@ -71,7 +72,7 @@ const RoomPage = ({ user, socket, users }) => {
                 openedChatTab && <Chat setOpenedChatTab={setOpenChatTab} socket={socket}/>
             }
             <h1 className="text-center pt-4 py-5">White Board Sharing App 
-                <span className="text-primary">[Users Online : {users.length}]</span>
+                {/* <span className="text-primary">[Users Online : {users.length}]</span> */}
             </h1>
             {
                 user?.presenter && (
