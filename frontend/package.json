@@ -26,5 +26,17 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
     "vite": "^4.3.0"
+  },
+  "resolutions": {
+    "@jridgewell/sourcemap-codec": "1.4.15",
+    "chalk": "2.4.2",
+    "ansi-styles": "3.2.1",
+    "escape-string-regexp": "1.0.5",
+    "supports-color": "5.5.0",
+    "color-convert": "1.9.3",
+    "color-name": "1.1.3",
+    "has-flag": "3.0.0",
+    "globals": "11.12.0",
+    "doctrine": "3.0.0"
   }
 }
