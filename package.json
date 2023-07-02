@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "start":"cd frontend && yarn dev",
+    "backend": "cd backend && yarn dev"
+  },
   "dependencies": {
     "nodejs": "^0.0.0",
     "react-router-dom": "^6.10.0",
