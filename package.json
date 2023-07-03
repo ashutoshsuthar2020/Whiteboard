@@ -1,19 +1,17 @@
 {
   "scripts": {
-    "buildback":"cd backend && yarn install --flat",
-    "buildfront":"cd frontend && yarn install --flat",
-    "buildstartback":"cd backend && yarn install --flat && yarn dev",
-    "buildstartfront":"cd frontend && yarn install --flat && yarn dev",
-    "dev":"concurrently \"yarn buildstartfront\" \"yarn buildstartback\"",
-    "startfront":"cd frontend && yarn dev",
+    "buildback": "cd backend && yarn install --flat",
+    "buildfront": "cd frontend && yarn install --flat",
+    "buildstartback": "cd backend && yarn install && yarn start",
+    "buildstartfront": "cd frontend && yarn install && yarn dev",
+    "dev": "concurrently \"yarn buildstartback\" \"yarn buildstartfront\" ",
+    "startfront": "cd frontend && yarn dev",
     "startback": "cd backend && yarn dev"
   },
   "dependencies": {
+    "concurrently": "^8.2.0",
     "nodejs": "^0.0.0",
     "react-router-dom": "^6.10.0",
     "react-toastify": "^9.1.3"
-  },
-  "engines":{
-    "node":"^14.18.0"
   }
 }
